@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStorage</title>
+</head>
+<body>
+    <h1>sessionStorage</h1>
+    <p>DIe Daten werden nur bis zum Beenden der Sitzung(Browser wird geschlossen) gespeichert
+        Danach verfallen sie.
+    </p>
+    <p>Die Daten werden nie zum Server transferiert.</p>
+    <p>DIe Maximale Größe leigt bei 5Mb</p>
+    
+    <h1>localStorage</h1>
+    <p>FUnktioniert identisch wie die sessionStorage, aber die Daten werden auch nach Schleißen des Browsers
+        beibehalten. Die Daten werden erst gelöscht, wenn der Benutzer seinen Cache leert, oder wir sie per JavaScript löschen.
+    </p>
+
+    <p> Aufbau mit dem von Cookies vergleichbar:
+        Schlüssel = Wert;
+
+    </p>
+
+    <p>Aufrufen:
+        sessionStorage.SchlüsselName => Gibt Wert des Schlüssels zurück
+        localStorage.SchlüsselName => GIbt Wert zurück
+        localStorage["Schlüsselname"]
+        local/sessionStorage.getItem(Schlüssel) => Wert wird zurückgegeben
+
+    </p>
+
+    <p> Speichern eines neuen Schlüssel-Wert Paares:
+        local/sessionStorage.setItem("Schlüssel", "Wert")
+    </p>
+
+    <p>
+        Eigenschaft: local/sessionStorage.length => Gibt zurück wie viele Schlüssel-Wert-Paare
+        vorhanden sind.
+    </p>
+
+    <p> Methoden:
+        ENtfernen eines S-W-Paares: session/localStorage.removeItem("Schlüssel")
+        Alle Daten löschen: session/localStorage.clear()
+        Schlüssel ermitteln: session/localStorage.key(Zahl) => GIbt uns den Schlüssel für die jeweilige Index-Position zurück.
+        
+    </p>
+</body>
+</html>

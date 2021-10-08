@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hallo Welt!</title>
+        <link rel="stylesheet" href="./style.css">
+        <!-- CSS only -->
+<!-- JavaScript Bundle with Popper -->
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="./helloWorld.js"></script>
+    </head>
+    <body class="col-xl-m-s">
+        <h1 id="helloWorld">Hallo Welt</h1>
+
+        <h2>Texte</h2>
+        <p>
+            <strong>Hallo Welt</strong>   das ist ein <em>Paragraph</em>.
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            
+            Sequi cupiditate dolore sed architecto culpa atque asperiores, soluta assumenda velit omnis!
+            Aspernatur ducimus explicabo et cumque quia laboriosam voluptas iste esse.
+        </p>
+        <p>
+            x<sup>2</sup>
+            x<sub>2</sub>
+            <small>Rechtlicher Hinweis, <del>deine Seele gehört jetzt uns</del><ins>Neuen Rechticher Hinweis</ins></small>
+            <mark>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam ullam repellendus, enim similique quaerat cumque, quas vero, voluptatum voluptates architecto natus fuga recusandae eum accusantium ducimus nisi. Et, veritatis vel.</mark>
+            
+        </p>
+        <blockquote>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas dicta a voluptatem porro accusantium cumque autem aliquam recusandae ipsa, facere in sint fuga earum laudantium maxime error neque molestias facilis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia mollitia consequuntur est dolore minima praesentium doloribus enim inventore qui temporibus. Eius, quasi. Nemo vel obcaecati, maxime libero iure earum assumenda.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit aliquam, excepturi nisi consectetur inventore explicabo neque itaque illo quisquam adipisci ea cumque optio impedit saepe consequatur. Dolore a est cupiditate.
+        </blockquote>
+        <q>
+            Wird mit Anfürungszeichen dargestellt
+        </q>
+        <abbr title="Hyper Text Markup Language">
+            HTML
+        </abbr>
+        <cite>
+            Harry Potter und der Stein der Weisen
+        </cite>
+        <address>
+            84503 Altötting
+            Marius Sommer
+        </address>
+        <a href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language">HTML auf Wikipedia</a>
+        <a href="./zweiteSeite.html" target="blank">Auf zur zweiten Seite</a>
+
+        <h3>Listen</h3>
+
+        <p>Ungeordnete Liste</p>
+        <ul>
+            <li>Oberpunkt 1</li>
+            <ul>
+                <li>Unterpunkt 1</li>
+                <li>Unterpunkt 2</li>
+            </ul>
+            <li>Oberpunkt 2</li>
+            <li>Oberpunkt 3</li>
+        </ul>
+        <ol type="i" start="4">
+            <li>Punkt 1</li>
+            <li>Punkt 2</li>
+            <li>Punkt 3</li>
+            <li>Punkt 4</li>
+        </ol>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Ist die meist verbreitetste Auszeichnungssprache/Markuplanguage.</dd>
+        </dl>
+
+        <h4>Tabellen</h4>
+        <table>
+            <!-- <colgroup>
+            <col span="2">
+            <col span="1">
+            </colgroup> -->
+            <thead>
+                <tr>
+                    <th scope="col">Artikel</th>
+                    <th scope="col">Anzahl</th>
+                    <th scope="col">Preis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Laptop</th>
+                    <td>2</td>
+                    <td>799€</td>
+                </tr>
+                <tr>
+                    <th scope="row">Monitore</th>
+                    <td>2</td>
+                    <td>299€</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">Gesamtpreis</th>
+                    <td>4</td>
+                    <td>2200</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h5>Bilder & Videos</h5>
+        <img src="https://via.placeholder.com/350x150" alt="Das ist ein Beispielbild">
+        <video controls autoplay muted>
+            <source src="./mov_bbb.mp4" type="video/mp4">
+        </video>
+        
+
+
+        <h6>Divs, spans und Attribute</h6>
+        <div class="container" id="firstDiv">
+            <h2 class="chapterTitle">
+                Kapitel 1
+            </h2>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dicta obcaecati doloremque beatae nihil aspernatur sequi. Quo consequatur libero recusandae id rem facilis, minima eaque maiores? Hic soluta cumque earum!
+        </div>
+        <div class="container" id="secondDiv">
+            <h2 class="chapterTitle">Kapitel 2</h2>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas possimus dolores expedita enim at ipsum quisquam, quibusdam accusamus quos modi tempore, velit eum. Soluta ex nobis aliquid dolores sit dicta.
+        </div>
+        <span>Hallo </span>
+        <span>Welt</span>
+        <a href="javascript:void(document.body.style.backgroundColor='black')">Darkmode</a>
+        <button class="button btn-primary" onclick="document.body.style.backgroundColor='white'">Lightmode</button>
+        <noscript></noscript>
+        <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/350x150" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/250x150" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/450x150" class="d-block w-100" alt="...">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div> -->
+
+    </body>
+</html>

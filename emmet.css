@@ -1,0 +1,185 @@
+/*
+Selektoren
+*/
+
+/* Einzelene ELemente rufen wir direkt auf
+=> Falls wir alle <p> stylen wollen
+schreiben wir einfach p
+ELmentnamen => Regeln */
+
+html {
+    color:blanchedalmond;
+}
+
+/* Universalselektor: *
+Dieser stylt alle Elemente */
+
+* {
+    color: darkgrey;
+}
+
+/* Klassen-Selektor
+    .Klassenname {Regel}
+    Stlylt alle Elemente mit der Klasse
+ */
+
+.container {
+    font-size: larger;
+}
+
+/* Id-Selektor
+    #Id-Name
+    Stylt alle Elemente mit dieser ID
+*/
+
+#Kapitel1 {
+    font-size: xx-large;
+    text-decoration: solid;
+}
+
+/* Gruppen-Selektor
+    .Klassen, p, #Id */
+
+tr,td {
+    border-width: 4px;
+    border-color: blue;
+    border-style: solid;
+}
+
+/* Kind-Selektor
+    Der Funktionier wie in der Emmet-Schreibweise
+    Element1 > Element2
+    Stylt alle Elemente die direkt innerhalb eines Element1-Tags liegen würden */
+
+section > article {
+    color: black;
+}
+
+/*  Nachfahren-Selektor 
+Element1 Element2
+Trifft alle Element2 Tags, die direkte Nachfahren sind oder Nachfahren von Tags innerhalb von Element1
+*/
+
+section p {
+    color:brown;
+}
+
+/* Direkte GEschwister-Kombinator
+h1 + h2
+Erfasst Elemente die direkt nebeneinander stehen */
+h1 + h2 {
+    text-decoration: dashed;
+}
+
+/* Allgemeine Geschwister-Kombinator
+    Die treffen alle Elemente die nebeneinander stehen */
+
+    p ~ a {
+        color: darkorange;
+        font-size: 20px;
+    }
+
+    /* Attributsselektor */
+    /* Element[attribut="Wert"]
+    Element:not([attribut="Wert"])
+    Element[attribut^="abc"] Muss mit abc beginnen
+    Element[attribut$="abc"] Muss mit abc enden
+    Element[attribut*="abc"] Muss abc beinhalten
+     */
+
+div[name="div1"] {
+    background-color: chartreuse;
+}
+
+/* 
+Pseudo-Klassen
+Beginnen mit einem :
+Selektor:pseudoklasse
+
+*/
+/* Trifft jede tr, die das erste Kindselement eines anderen Elementes ist */
+/* tr:first-child {
+    background-color: blue;
+} */
+
+/* Trifft jede tr, die das letzte Kindselement eines anderen Elementes ist */
+/* tr:last-child {
+    background-color: red;
+} */
+
+/* Trifft nur leere Elemente des Selektors */
+div:empty {
+    height: 50px;
+    width: 50px;
+    background-color: yellowgreen;
+}
+
+/* Greift, soblad der User mit der Maus über dem Element ist  */
+a:hover {
+    font-size: xx-large;
+    color:violet
+}
+/* Erfasst document */
+html {
+    background-color: red;
+}
+:root {
+    background-color: green;
+}
+
+/* nth-child */
+
+tr:nth-child(even) {
+    background-color: dodgerblue;
+}
+tr:nth-child(odd) {
+    background-color: red;
+}
+
+article:nth-last-child(2) {
+    background-color: khaki;
+}
+
+tr:only-child {
+    background-color: coral;
+}
+
+/* Bei first, last und only-child können wir noch of-type anhängen
+   trifft dann nur das selektierte Element, falls es der einzige Nachfahre des Typens ist */
+
+p:only-child {
+    font-size: xx-large;
+}
+
+p:only-of-type {
+    font-size: smaller;
+}
+
+/* Pseudo-Elemente */
+/* Selektor::pseudoelement */
+
+img::after {
+    content: "Ich komme nach einem Bild";
+}
+
+img::before {
+    content: "Ich komme vor einem Bild";
+}
+
+h1,h2::first-letter {
+    font-size: 60px;
+}
+
+article::first-line {
+    color:magenta;
+}
+
+/* 
+    Alle gerade oder ungeraden Elemente selektieren:
+*/
+
+/* 
+Element:nth-child(even) Alle geraden
+Element:nth-child(odd) Alle ungeraden
+ELement:nth-child(3n) Jedes dritte usw...
+*/

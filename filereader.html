@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileReader</title>
+</head>
+<body>
+    <h1>File Reader API</h1>
+    <p>Die EIgenschaften files und result werden durch den FileReader befüllt</p>
+    <input type="file" name="upload" id="upload">
+    <code id="output"></code>
+
+    <script>
+        let upload = document.querySelector("#upload");
+        upload.onchange = function () {
+            let meinReader = new FileReader();
+            console.log(this.files);
+            let file = this.files.item(0);
+            // Load Events
+            meinReader.addEventListener("loadstart", load_start);
+            meinReader.addEventListener("load", on_load);
+            meinReader.addEventListener("loadend", load_end);
+
+            // Abort & Error
+
+            meinReader.addEventListener("abort", on_abort);
+            meinReader.addEventListener("error", on_error);
+
+            //  Progress
+            meinReader.addEventListener("progress", on_progress);
+
+            meinReader.readAsText(file);
+
+            // Load Funktionen
+            function load_start() {
+                console.log("Einleseprozess hat begonnen...")
+            }
+
+            function on_load() {
+                console.log("...Einlesen erfolgreich abgeschlossen!")
+                document.querySelector("#output").innerHTML = this.result;
+                // this.result liefert uns den Output
+                // this => FileReader
+            }
+
+            function load_end() {
+                console.log("Einlesen beendet.")
+            }
+
+            // Abort & Error Funktionen
+
+            function on_abort() {
+                console.log("Prozess wurde abgebrochen!")
+            }
+
+            function on_error(message) {
+                console.error("Fehler aufgetreten");
+                console.error("Fehler: ", message.error);
+            }
+
+            // Progress Funktion:
+
+            function on_progress(message) {
+                // Stellt Text in der Konsole blau dar
+                console.info("...liest ein...");
+                console.info(message.total);
+            }
+        }
+    </script>
+</body>
+</html>

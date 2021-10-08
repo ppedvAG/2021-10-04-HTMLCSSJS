@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script src="forms.js" async></script>
+</head>
+<body>
+    <!-- Action verweist auf ein anderes Dokument, das beim Senden geladen werden soll -->
+    <form action="dom.html">
+        <label> Username:
+            <input type="text" required placeholder="Benutzername">
+        </label>
+        <label>
+            Passwort:
+            <input type="password" required placeholder="*******">
+        </label>
+        <!-- Sendet das Formular ab -->
+        <input type="submit" value="Registrieren"> 
+    </form>
+    <!-- Form - Tags 
+        <form> Beginnt und endet eine Form
+        <label> Umschließt und beschreibt ein Input-Element
+        <output> Erhält mögliche Ergebnisse von input
+        <input> Kann verschiedene Arten von Input empfangen
+        <select> Dropdownmenü
+            <option> ENthält einzelne Dropdown-Einträge
+            <optgroup> Überschrift für einzelne Options
+        <textarea> Mehrzeiliges EIngabefeld
+        <datalist> Textfeld, das mehrere <option>-Tags umschließt, die mögliche Antworten darstellen
+    -->
+    
+    <!-- Form/Input - Attribute
+        min, max -- Erlaubt es uns einen Minimal- und einen Maximalwert, 
+        Geht nur bei number, range und date
+
+        step -- Schritweite bei range, number und Date
+
+        placeholder -- Platzhaltertext
+
+        form -- weißt ein input-Element einer Form zu
+
+        list -- verknüpft ein Input Elment mit einer Datenliste, für autocomplete
+
+        formmethod -- GEht nur beim Form Element selber und "POST" oder "GET" setzen
+
+        multiple, Ermöglicht mehrfacheingabe bei <select>
+
+        action -- URL, die den Input verarbeitet bzw empfangen soll
+
+    -->
+
+    <!-- Input-Typen
+        text -- Einzeiliges Textfeld
+        number -- Gleitkommazahlen
+        range -- Gleitkommazahlen, aber mit einem Schieberegler(unsichtbar)
+        color -- Farbpalleten-Auswahl
+        date -- Datum
+        month -- Monat
+        week -- Woche
+        time -- Zeit
+        datetime-local -- Datum + Uhrzeit in der lokalen Zeitzone
+        file -- Datei-Upload
+        password -- Text, aber unlesbar
+        radio -- Radio-Button
+        checknox -- Checkbox
+        button -- Button / <button> besser
+        submit -- sendet Formular ab
+        reset -- Setzt das Formular zurück
+        search -- Suchfeld
+        url -- eine absolute URL
+        tel -- Telefonnummer
+        email -- Email-Adresse
+        required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+    -->
+    <form name="mail" id="mailForm">
+        <label> E-Mail Adresse:
+            <input id="email" type="email" required>
+        </label>
+        <label> Alter:
+            <input type="number" min="18" max="99">
+        </label>
+        <label>Newsletter:
+            <input type="checkbox">
+        </label>
+        <input id="submit" type="submit" value="Absenden">
+        <input type="reset" value="Von vorne">
+        <label> Farbe:
+            <input id="color" type="color">
+        </label>
+        </form>
+        <form>
+            <label>
+                Dropdownmenü:
+                <select>
+                    <optgroup label="Marvel">Marvel
+                        <option value="Spiederman">Spiederman</option>
+                        <option value="Iron Man">Iron Man</option>
+                        <option value="Hulk">Hulk</option>
+                    </optgroup>
+                    <optgroup label="DC">DC
+                        <option value="Batman">Batman</option>
+                        <option value="Superman">Superman</option>
+                        <option value="Wonderwoman">Wonderwoman</option>
+                    </optgroup>
+                </select>
+            </label>
+        </form>
+        <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction()">OK</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+        const inpObj = document.getElementById("id1");
+        if (!inpObj.checkValidity()) {
+            document.getElementById("demo").innerHTML = inpObj.validationMessage;
+        }
+        }
+        </script>
+    </body>
+</html>

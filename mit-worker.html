@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mit-Worker</title>
+</head>
+<body>
+    <p>Derzeitige Zahl:</p>
+    <output id="result"></output>
+    <button onclick="starteWorker()">Start</button>
+    <button onclick="stoppeWorker()">Stop</button>
+    <button onclick="alert('Hallo Welt!')">Sag was</button>
+    <script>
+        let myWorker;
+        function starteWorker() {
+
+            if (typeof(Worker) !== "undefined") // Falls udnefined rauskommt, unterstützt der Browser keine Webworker
+            {
+                if (typeof(myWorker) == "undefined") {
+                    myWorker = new Worker("worker.js");
+                    console.log(" Worker wurde gestartet: ", myWorker);
+                }
+                myWorker.onmessage = function(event) {
+                    document.querySelector("#result").innerHTML = event.data;
+                    console.log(event.data) // Rückgabe vom worker
+                }
+            }
+            else {
+                document.querySelector("#result").innerHTML = "Ihr Browser unterstüzt keine Web Worker"
+            }
+        }
+
+        function stoppeWorker() {
+            myWorker.terminate(); // Beendet Worker
+            myWorker = undefined; // Damit zeigen wir, dass gerade kein Worker läuft
+        }
+    </script>
+</body>
+</html>

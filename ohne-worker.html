@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohne Worker</title>
+</head>
+<body>
+    <p>Unsere Seite ohnen einen Worker</p>
+    <button onclick="start()">Funktion starten</button>
+    <button onclick="alert('Hallo Welt')">Meldung</button>
+
+    <script>
+        function start() {
+            for (let i = 0; i < 500000000; i++)
+            {
+                Math.sqrt(Math.random() * 10000000);
+            }
+            alert("Script ist fertig.")
+        }
+    </script>
+</body>
+</html>

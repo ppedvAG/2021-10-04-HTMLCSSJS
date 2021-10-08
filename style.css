@@ -1,0 +1,67 @@
+@media screen and (min-width: 500px) {
+    body {
+        background-color: greenyellow;
+    }
+}
+
+@media screen and (max-width: 499px)
+{
+    body {
+        background-color: black;
+    }
+}
+
+@media print {
+    * {
+        color: black;
+    }
+}
+
+
+
+p {
+    color: #396e1e85;
+    background-color: beige;
+    font-size: xx-large;
+    font-weight: 900;
+    text-decoration: overline wavy;
+    text-align: center;
+}
+
+.container {
+    background-color: rgb(221, 192, 26);
+}
+
+#firstDiv {
+    background-color: pink;
+}
+
+.container, .chapterTitle {
+    color: black;
+}
+
+tbody > tr {
+    background-color: aquamarine;
+}
+
+
+#helloWorld {
+    border-bottom: 20px; 
+    /* border-style: solid; */
+    /* border-top: 0px; */
+    /* border-right: 0; */
+    /* border-left: 0; */
+    border-radius: 20px;
+    border: 20px solid brown;
+    border-top-color: aqua;
+    border-top-width: 5px;
+    border-top-style: dashed;
+    border-bottom-width: 10px;
+    border-bottom-color: brown;
+    border-bottom-style: double;
+    padding: 50px;
+    background-color: crimson;
+    margin: 40px;
+    box-shadow: 5px 10px 5px #80808082;
+}
+

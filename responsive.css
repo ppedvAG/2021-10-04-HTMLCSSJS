@@ -1,0 +1,143 @@
+/* Media-Queries */
+/* Erlauben es uns unsere Seite responsive zu gestalten
+d.h. dass sie sich an das Gerät des Users anpasst */
+
+/* 
+    WIr setzen Breakpoints an bestimmten Bildschirmmaßen und je nach Maße wird dann über das styling entschieden
+
+*/
+
+/* @media media-type: (print, *screen*, speech} and (Bedingung) {
+    regelen
+} */
+
+@media screen and (max-width:600px) {
+    html {
+        background-image: linear-gradient(45deg, rgb(160, 20, 20), blue);
+    }
+    * {
+        font-size: smaller;
+    }
+    article {
+        display: grid;
+    }
+    #p1 {
+        grid-row: 1;
+    }
+    #p2 {
+        grid-row: 3;
+    }
+    #p3 {
+        grid-row:5;
+    }
+    
+}
+
+@media screen and (min-width: 601px) {
+    html {
+        background-image: linear-gradient(45deg, yellow, red);
+    }
+    * {
+        font-size: medium;
+    }
+    article {
+        display: grid;
+    }
+    #p1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #p2 {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    #p3 {
+        grid-row:2;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    html {
+        background-image: linear-gradient(45deg, green, blue);
+    }
+    * {
+        font-size: larger;
+    }
+    article {
+        display: grid;
+    }
+    #p1 {
+        grid-row: 1;
+    }
+    #p2 {
+        grid-row: 1;
+    }
+    #p3 {
+        grid-row:1;
+    }
+}
+
+/* 
+    Größeneinheiten
+    ABsolute Gröeneinheiten:
+    cm Centimeter
+    mm Millimeter
+    in inches
+    px Pixel == 1/96 in
+    pt Point == 1/72 in
+    pc picas == 12 pnt
+    Eignen sich nicht so gut für responsive design
+
+    Relative Längen:
+    em Relativ zur Schriftgröße des Elements 2em => 2x so groß wie die Schriftgröße
+    ex Relativ zur Höhe der Schriftgröße (Kommt ganz selten vor)
+    ch Relativ zur Größe der 0 in der jeweiligen Schriftgröße (Kommt auch selten vor)
+    rem Relativ zur Schriftgröße im root Element (also unser HTML-Tag) Ist einheitlich
+    vw 1% von der Breite des Sichtfeldes vom User
+    vh 1% von der Höhe des Sichtfelds vom User
+    % Relativ zum ELternelement (<div> <p> </p> </div> div = 100px p 1% => 1px)
+*/
+
+/* Variablen  */
+
+/* Erstellen: --variablenNamen */
+/* Nutzen in Eigenschaften: EIgenschaft: var(--variablenNamen, (fallback)) */
+
+/* Animationen in Css */
+/* Vor Benutzung müssen wir die Animationen definieren: */
+/*  2 verschiedene Status
+    @keyframes NameDerAnimation {
+    from {Regel}
+    to {Regel}
+} */
+/* Mehreren Zwischenschritten
+    @keyframe NameDerAnimation {
+    0% {Regel}
+    10% {Regel}
+    .
+    .
+    .
+    100% {Regel}
+    }
+ */
+
+@keyframes bouncing {
+    0% {
+        transform: translate3d(0, 0, 0);
+        box-shadow: 0 0 0 -1rem black;}
+    100% {
+        transform: translate3d(0,20rem, 0);
+        box-shadow: 0 -20rem 0 -5rem black;
+    }
+}
+
+#ball {
+    background-color: red;
+    border-radius: 100%;
+    width: 10rem;
+    height: 10rem;
+    animation: bouncing 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
